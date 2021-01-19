@@ -16,3 +16,12 @@ def formatter(t):
     form_string = form_string + "".join(l)
     print(l)
     return form_string.format(*t)
+
+#Task 4 is boring
+
+#Task 5
+f = ['oranges', 1.3, 'lemons', 1.1]
+
+print(f"The weight of an {f[0][:-1]} is {f[1]} and the weight of a {f[2][:-1]} is {f[3]}")
+
+print(f"The weight of an {f[0][:-1].upper()} is {f[1] * 1.2} and the weight of a {f[2][:-1].upper()} is {f[3] * 1.2}")
