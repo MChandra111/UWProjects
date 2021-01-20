@@ -1,4 +1,3 @@
-#This took way too long
 import sys
 from statistics import mean
 
@@ -35,10 +34,20 @@ def thanks():
     else: 
         for i in range(len(donor)):
             if name == donor[i][0]:
-                amount = int(input("Please provide the donation amount >> "))
+                amount = input("Please provide the donation amount >> ")
+                try:
+                    amount = int(amount)
+                except ValueError:
+                    print("You need to provide a number!")
+                    thanks()
                 donor[i][1].append(amount)
                 email(amount, name)
-        amount = int(input("Please provide the donation amount >> "))
+        amount = input("Please provide the donation amount >> ")
+        try:
+            amount = int(amount)
+        except ValueError:
+            print("You need to provide a number!")
+            thanks()
         donor.append((name, [amount]))
     print(f"Thank you for sending us the generous amount of {amount}, Mr./Mrs. {name}")
     main()
